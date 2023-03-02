@@ -1,0 +1,43 @@
+{
+	"name": "client",
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "packages/client/src",
+	"projectType": "application",
+	"targets": {
+		"build": {
+			"executor": "@nrwl/webpack:webpack",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"target": "web",
+				"compiler": "tsc",
+				"outputPath": "dist/packages/client",
+				"main": "packages/client/src/index.ts",
+				"tsConfig": "packages/client/tsconfig.json",
+				"isolatedConfig": true,
+				"webpackConfig": "webpack.config.nx.js",
+				"statsJson": true,
+				"index": "packages/client/index.html"
+			},
+			"configurations": {
+				"production": {
+					"optimization": true,
+					"extractLicenses": true,
+					"inspect": false,
+					"fileReplacements": [
+						{
+							"replace": "packages/client/src/environments/environment.ts",
+							"with": "packages/client/src/environments/environment.prod.ts"
+						}
+					]
+				}
+			}
+		},
+		"dev": {
+			"executor": "@nrwl/webpack:dev-server",
+			"options": {
+				"buildTarget": "client:build"
+			}
+		}
+	},
+	"tags": ["scope:client"]
+}

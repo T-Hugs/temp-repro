@@ -1,0 +1,69 @@
+{
+	"name": "repro",
+	"version": "1.0.0",
+	"description": "",
+	"main": "dist/client/index.js",
+	"scripts": {
+		"init": "tsc -p packages/models/tsconfig.json",
+		"build-nx": "nx build client --skip-nx-cache",
+		"build-no-nx": "webpack -c webpack.config.js",
+		"serve": "http-server dist/packages/client"
+	},
+	"author": "",
+	"dependencies": {
+		"@deepkit/api-console-gui": "^1.0.1-alpha.90",
+		"@deepkit/app": "^1.0.1-alpha.90",
+		"@deepkit/bson": "^1.0.1-alpha.90",
+		"@deepkit/core": "^1.0.1-alpha.89",
+		"@deepkit/core-rxjs": "^1.0.1-alpha.89",
+		"@deepkit/event": "^1.0.1-alpha.90",
+		"@deepkit/framework": "^1.0.1-alpha.90",
+		"@deepkit/framework-debug-api": "^1.0.1-alpha.90",
+		"@deepkit/framework-debug-gui": "^1.0.1-alpha.90",
+		"@deepkit/http": "^1.0.1-alpha.90",
+		"@deepkit/injector": "^1.0.1-alpha.90",
+		"@deepkit/logger": "^1.0.1-alpha.89",
+		"@deepkit/mysql": "^1.0.1-alpha.90",
+		"@deepkit/orm": "^1.0.1-alpha.90",
+		"@deepkit/postgres": "^1.0.1-alpha.90",
+		"@deepkit/rpc": "^1.0.1-alpha.90",
+		"@deepkit/rpc-tcp": "^1.0.1-alpha.90",
+		"@deepkit/sql": "^1.0.1-alpha.90",
+		"@deepkit/sqlite": "^1.0.1-alpha.90",
+		"@deepkit/stopwatch": "^1.0.1-alpha.90",
+		"@deepkit/type": "^1.0.1-alpha.90",
+		"@deepkit/type-compiler": "^1.0.1-alpha.89",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"tslib": "^2.3.0"
+	},
+	"devDependencies": {
+		"@babel/preset-react": "^7.14.5",
+		"@nrwl/cypress": "15.8.2",
+		"@nrwl/js": "15.8.2",
+		"@nrwl/webpack": "^15.8.2",
+		"@testing-library/react": "14.0.0",
+		"@types/node": "18.14.2",
+		"@types/react": "18.0.28",
+		"@types/react-dom": "18.0.11",
+		"cypress": "^12.2.0",
+		"http-server": "^14.1.1",
+		"nx": "15.8.2",
+		"react-test-renderer": "18.2.0",
+		"ts-loader": "^9.4.2",
+		"tsconfig-paths": "^4.1.2",
+		"tsconfig-paths-webpack-plugin": "^4.0.0",
+		"typescript": "~4.9.5",
+		"webpack": "^5.75.0",
+		"webpack-cli": "^5.0.1"
+	},
+	"nx": {
+		"targets": {
+			"build": {
+				"outputs": [
+					"{projectRoot}/dist/"
+				]
+			}
+		}
+	}
+}
