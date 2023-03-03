@@ -1,6 +1,7 @@
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const path = require("path");
 const typeCompiler = require("@deepkit/type-compiler");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
 	mode: "development",
@@ -32,4 +33,5 @@ module.exports = {
 			},
 		],
 	},
+	plugins: [new HtmlWebpackPlugin()],
 };
